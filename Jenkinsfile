@@ -8,23 +8,11 @@ pipeline {
         }
 
        stage('Preparation') {
-          git 'git@github.com:lennonn/zlennon-java-tutorials.git'
+          git 'git@github.com:lennonn/cloud-native.git'
        }
 
           stage('Maven Build') {
-             sh "clean install -pl cloud-native  -am -amd -Pdev -Dmaven.test.skip=true"
+             sh "clean install -Dmaven.test.skip=true"
           }
-
-        stage('build-image') {
-            steps {
-                retry(2) { sh 'docker build . -t cloud-native:latest'}    #构建镜像
-            }
-        }
-        stage('deploy') {
-            steps {
-                timeout(time: 1, unit: 'MINUTES') {sh "kubectl apply -f deploy/"     #创建deployment
-                }
-            }
-        }
     }
 }
