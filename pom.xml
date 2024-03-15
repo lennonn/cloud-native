@@ -33,7 +33,7 @@
     </dependencies>
 
     <build>
-        <finalName>cloud-native-1.0.jar</finalName>
+        <finalName>cloud-native</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

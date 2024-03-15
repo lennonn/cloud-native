@@ -9,7 +9,7 @@ MAINTAINER zlennon@163.com
 WORKDIR /app
 
 # Copy the JAR file of your Spring Boot application into the container
-COPY target/cloud-native-1.0.jar /app/cloud-native.jar
+COPY target/cloud-native.jar /app/cloud-native.jar
 
 # Expose the port your Spring Boot application runs on
 EXPOSE 9999
