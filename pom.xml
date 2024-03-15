@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.zlennon</groupId>
     <artifactId>cloud-native</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>cloud-native</name>
     <description>cloud-native</description>
     <properties>
@@ -33,6 +33,7 @@
     </dependencies>
 
     <build>
+        <finalName>cloud-native-1.0.jar</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

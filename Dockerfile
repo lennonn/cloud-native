@@ -9,10 +9,10 @@ MAINTAINER zlennon@163.com
 WORKDIR /app
 
 # Copy the JAR file of your Spring Boot application into the container
-COPY target/springboot-k8s.jar /app/springboot-k8s.jar
+COPY target/cloud-native-1.0.jar /app/cloud-native.jar
 
 # Expose the port your Spring Boot application runs on
-EXPOSE 8080
+EXPOSE 9999
 
 # Define the command to run your application using java -jar
-CMD ["java", "-jar", "springboot-k8s.jar"]
+CMD ["java", "-jar", "cloud-native.jar"]
