@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-native-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cloud-native
+  template:
+    metadata:
+      labels:
+        app: cloud-native
+    spec:
+      containers:
+        - name: cloud-native
+          image: zlennon/cloud-native:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloud-native-service
+spec:
+  selector:
+    app: cloud-native  # 与部署的标签匹配
+  ports:
+    - protocol: TCP
+      port: 8888
+      targetPort: 9999  # 将服务端口映射到容器的 9999 端口
+  type: NodePort
