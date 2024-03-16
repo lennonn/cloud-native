@@ -26,8 +26,7 @@ pipeline {
               container('maven') {
                   // sh 'java -version'
                  sh 'mvn clean package'
-                echo 'package success'
-
+                 echo 'package success'
               }
           }
         }
