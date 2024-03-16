@@ -12,7 +12,6 @@ pipeline {
     }
 
     stages {
-
             // 拉取代码
         stage('git clone') {
             steps {
